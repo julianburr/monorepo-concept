@@ -1,16 +1,40 @@
 {
+  "private": true,
   "name": "monorepo-concept",
-  "version": "1.0.0",
-  "description": "",
+  "workspaces": [
+    "components/*",
+    "modules/*"
+  ],
+  "description": "Proof of concept for partially public mono repos",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/julianburr/monorepo-concept.git"
   },
-  "keywords": ["proof-of-concept"],
-  "author": "",
+  "keywords": [
+    "proof-of-concept"
+  ],
+  "author": "Julian Burr <hello@julianburr.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/julianburr/monorepo-concept/issues"
   },
-  "homepage": "https://github.com/julianburr/monorepo-concept#readme"
+  "homepage": "https://github.com/julianburr/monorepo-concept#readme",
+  "devDependencies": {
+    "commitlint": "^7.2.1",
+    "husky": "^1.1.4",
+    "lerna": "^3.4.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }  
+  },
+  "scripts": {
+    "bootstrap": "lerna run bootstrap",
+    "nuke": "rm -rf node_modules **/node_modules",
+    "reinstall": "yarn nuke && yarn",
+    "test": "lerna run test",
+    "publish:check": "lerna changed",
+    "publish": "lerna publish"
+  }
 }
