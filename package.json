@@ -1,0 +1,16 @@
+{
+  "name": "monorepo-concept",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianburr/monorepo-concept.git"
+  },
+  "keywords": ["proof-of-concept"],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julianburr/monorepo-concept/issues"
+  },
+  "homepage": "https://github.com/julianburr/monorepo-concept#readme"
+}
